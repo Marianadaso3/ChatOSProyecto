@@ -159,11 +159,12 @@ void *handle_client(void *arg){
 
 int main(int argc, char **argv){
 	if(argc != 2){
-		printf("Usage: %s <port>\n", argv[0]);
+		printf("Usage: %s <ip> %s <port>\n", argv[0], argv[1]);
 		return EXIT_FAILURE;
 	}
 
-	char *ip = "127.0.0.1";
+	char *ip = argv[0];
+	// char *ip = "127.0.0.1";
 	int port = atoi(argv[1]);
 	int option = 1;
 	int listenfd = 0, connfd = 0;
